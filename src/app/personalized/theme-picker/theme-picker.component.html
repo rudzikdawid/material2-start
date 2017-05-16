@@ -1,0 +1,7 @@
+<form>
+  <md-select placeholder="Theme" [(ngModel)]="selectedTheme" (change)="themeChanged()" name="theme">
+    <md-option *ngFor="let theme of themes" [value]="theme">
+      {{theme}}
+    </md-option>
+  </md-select>
+</form>

@@ -1,0 +1,18 @@
+<md-card>
+  <md-card-content>
+    <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
+    <h2>{{selectedUser.name}}</h2>
+    <p>{{selectedUser.details}}</p>
+  </md-card-content>
+</md-card>
+
+<md-card fxFlex fxLayout="column" >
+  <md-slide-toggle [(ngModel)]="selectedUser.isAdmin">Is Admin?</md-slide-toggle>
+  <md-slide-toggle [(ngModel)]="selectedUser.isCool">Is Cool?</md-slide-toggle>
+
+  <md-select placeholder="Favorite food">
+    <md-option *ngFor="let food of ['pizza', 'hotdog', 'bigos', 'schabowe']" [value]="food.value">
+      {{ food }}
+    </md-option>
+  </md-select>
+</md-card>

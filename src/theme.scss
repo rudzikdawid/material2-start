@@ -1,19 +1,37 @@
-@import '~@angular/material/_theming';
-
+@import '~@angular/material/_theming.scss';
 @include mat-core();
 
-$primary: mat-palette($mat-red);
-$accent: mat-palette($mat-blue);
+$light-primary: mat-palette($mat-blue);
+$light-accent: mat-palette($mat-red);
+$light-theme: mat-light-theme($light-primary, $light-accent);
 
-$theme: mat-light-theme($primary, $accent);
+$dark-primary: mat-palette($mat-light-blue);
+$dark-accent: mat-palette($mat-green);
+$dark-blue: mat-dark-theme($dark-primary, $dark-accent);
 
-@include angular-material-theme($theme);
+@include angular-material-theme($dark-blue);
 
-.dark-theme {
-  $dark-primary: mat-palette($mat-light-blue);
-  $dark-accent: mat-palette($mat-green);
+.dark-blue {
+  @include angular-material-theme($dark-blue);
 
-  $dark-theme: mat-dark-theme($dark-primary, $dark-accent);
+  .theme-bg {
+    background-color: map_get($mat-dark-theme-background, background);
+  }
+}
 
-  @include angular-material-theme($dark-theme);
+.light-blue {
+  @include angular-material-theme($light-theme);
+
+  .theme-bg {
+    background-color: map_get($mat-light-theme-background, background);
+  }
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 8px;
+  outline-color: transparent;
+  &.active {
+    color: map_get($dark-primary, 500) !important;
+  }
 }
