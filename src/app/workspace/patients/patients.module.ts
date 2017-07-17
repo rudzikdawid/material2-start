@@ -11,8 +11,8 @@ const patientsRoutes: Routes = [
     path: '',
     component: PatientsComponent,
     children: [
-      { path: 'details', loadChildren: 'app/workspace/patients/details/details.module#DetailsModule' },
-      { path: 'list',    loadChildren: 'app/workspace/patients/list/list.module#ListModule' }
+      { path: 'details', loadChildren: './details/details.module#DetailsModule' },
+      { path: 'list',    loadChildren: './list/list.module#ListModule' }
     ]
   }
 ];

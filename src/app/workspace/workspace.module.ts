@@ -29,9 +29,9 @@ const workspaceRoutes: Routes = [
       {
         path: '',
         children: [
-          { path: 'patients', loadChildren: 'app/workspace/patients/patients.module#PatientsModule' },
-          { path: 'something', loadChildren: 'app/workspace/something/something.module#SomethingModule' },
-          { path: 'settings', loadChildren: 'app/workspace/settings/settings.module#SettingsModule' },
+          { path: 'patients', loadChildren: './patients/patients.module#PatientsModule' },
+          { path: 'something', loadChildren: './something/something.module#SomethingModule' },
+          { path: 'settings', loadChildren: './settings/settings.module#SettingsModule' },
         ]
       }
     ]

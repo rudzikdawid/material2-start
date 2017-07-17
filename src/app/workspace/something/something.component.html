@@ -1,3 +1,24 @@
 <p>
   something works!
 </p>
+
+<div class="main-content">
+<gridster [options]="gridsterOptions"
+          [draggableOptions]="{ handlerClass: 'panel-heading' }"
+          #gridster1
+          style="min-height: 500px;">
+
+  <gridster-item *ngFor="let widget of widgets"
+                 [(x)]="widget.x"
+                 [(y)]="widget.y"
+                 [(w)]="widget.w"
+                 [(h)]="widget.h">
+
+    <div class="panel-heading">
+      <h5 class="panel-title">{{ widget.title }}</h5>
+    </div>
+
+  </gridster-item>
+
+</gridster>
+</div>
