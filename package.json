@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "./node_modules/.bin/ng serve",
+    "start": "ng serve",
+    "serve:aot": "ng serve -prod --sourcemaps --aot",
     "build": "ng build",
     "build:aot": "ng build -prod --sourcemaps --aot",
     "lint": "ng lint",
@@ -12,28 +13,28 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^4.3.0",
+    "angular2gridster": "0.6.4",
+    "@angular/animations": "^4.3.2",
     "@angular/cdk": "github:angular/cdk-builds",
-    "@angular/common": "^4.3.0",
-    "@angular/compiler": "^4.3.0",
-    "@angular/core": "^4.3.0",
+    "@angular/common": "^4.3.2",
+    "@angular/compiler": "^4.3.2",
+    "@angular/core": "^4.3.2",
     "@angular/flex-layout": "angular/flex-layout-builds",
-    "@angular/forms": "^4.3.0",
-    "@angular/http": "^4.3.0",
-    "@angular/material": "2.0.0-beta.8",
-    "@angular/platform-browser": "^4.3.0",
-    "@angular/platform-browser-dynamic": "^4.3.0",
-    "@angular/platform-server": "^4.3.0",
-    "@angular/router": "^4.3.0",
-    "angular2gridster": "^0.6.3",
+    "@angular/forms": "^4.3.2",
+    "@angular/http": "^4.3.2",
+    "@angular/material": "angular/material2-builds",
+    "@angular/platform-browser": "^4.3.2",
+    "@angular/platform-browser-dynamic": "^4.3.2",
+    "@angular/platform-server": "^4.3.2",
+    "@angular/router": "^4.3.2",
     "core-js": "^2.4.1",
     "hammerjs": "^2.0.8",
-    "rxjs": "^5.0.1",
-    "zone.js": "^0.8.12"
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
-    "@angular/cli": "^1.2.1",
-    "@angular/compiler-cli": "^4.3.0",
+    "@angular/cli": "^1.2.6",
+    "@angular/compiler-cli": "^4.3.2",
     "@types/jasmine": "2.5.46",
     "@types/node": "~7.0.12",
     "codelyzer": "~3.0.1",
@@ -41,6 +42,6 @@
     "simple-terminal-menu": "^1.1.3",
     "ts-node": "~3.0.4",
     "tslint": "^5.3.2",
-    "typescript": "^2.4.1"
+    "typescript": "^2.4.2"
   }
 }
