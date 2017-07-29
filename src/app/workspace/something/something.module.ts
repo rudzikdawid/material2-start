@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { SomethingComponent} from './something.component';
 import { GridsterModule } from 'angular2gridster';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 const somethingRoutes: Routes = [
@@ -13,7 +14,8 @@ const somethingRoutes: Routes = [
   imports: [
     RouterModule.forChild(somethingRoutes),
     GridsterModule,
-    CommonModule
+    CommonModule,
+    FlexLayoutModule
   ],
   declarations: [SomethingComponent]
 })

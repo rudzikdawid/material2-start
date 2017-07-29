@@ -1,3 +1,8 @@
+:host {
+  display: flex;
+  flex: 1;
+}
+
 h1 {
   font-size: 22px;
   padding: 0 20px;
@@ -63,20 +68,4 @@ h1 {
 .gridster-item-prototype.is-over .gridster-item-inner {
 
   visibility: visible;
-}
-
-.gridster-item-inner {
-  background-color: red;
-  position: absolute;
-  top:0;
-  left: 0;
-  overflow: auto;
-  width: 80px;
-  height: 60px;
-  visibility: hidden;
-
-  -webkit-transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
-  -moz-transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
-  -o-transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
-  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
 }

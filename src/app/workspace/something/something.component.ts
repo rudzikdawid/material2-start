@@ -48,10 +48,40 @@ export class SomethingComponent implements OnInit {
   ];
 
   gridsterOptions = {
-    lanes: 5, // how many lines (grid cells) dashboard has
-    direction: 'vertical', // items floating direction: vertical/horizontal
+    lanes: 2, // how many lines (grid cells) dashboard has
+    direction: 'horizontal', // items floating direction: vertical/horizontal
     dragAndDrop: true, // possible to change items position by drag n drop
-    resizable: true // possible to resize items by drag n drop by item edge/corner
+    resizable: true, // possible to resize items by drag n drop by item edge/corner
+    responsiveView: true, // turn on adopting items sizes on window resize and enable responsiveOptions
+    responsiveDebounce: 500, // window resize debounce time
+    responsiveOptions: [
+      {
+        breakpoint: 'sm',
+        direction: 'vertical',
+        lanes: 2
+      },
+      {
+        breakpoint: 'md',
+        minWidth: 768,
+        direction: 'vertical',
+        lanes: 4,
+        resizable: true
+      },
+      {
+        breakpoint: 'lg',
+        minWidth: 1250,
+        direction: 'vertical',
+        lanes: 6,
+        resizable: true
+      },
+      {
+        breakpoint: 'xl',
+        minWidth: 1800,
+        direction: 'vertical',
+        lanes: 8,
+        resizable: true
+      }
+    ]
   };
 
 
