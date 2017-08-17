@@ -12,7 +12,7 @@ html, body {
 
 .gridster-item-inner {
   padding: 10px;
-  background-color: black;
+  background-color: #222;
   position: absolute;
   bottom: 10px;
   top:10px;

@@ -16,13 +16,23 @@
         <h5 class="panel-title">{{ widget.title }}</h5>
       </div>
 
-      <p>
-        Position: {{gridster1?.item?.x}} x {{gridster1?.item?.y}}<br>
-        Size: {{widget.w}} x {{widget.h}}
-      </p>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A exercitationem modi pariatur repudiandae. A atque ea eaque eius ex illum ipsa laudantium nobis odio officiis quia rem sequi unde, veritatis!</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A exercitationem modi pariatur repudiandae. A atque ea eaque eius ex illum ipsa laudantium nobis odio officiis quia rem sequi unde, veritatis!</p>
+      <div class="body" style="display: flex; min-height: 100%">
+
+        <p>
+          <!--Position: {{gridster1?.item?.x}} x {{gridster1?.item?.y}}<br>-->
+          <!--Size: {{widget.w}} x {{widget.h}}-->
+          <!--{{gridster1 | json}}-->
+        </p>
+
+        <ngx-charts-advanced-pie-chart
+          [scheme]="colorScheme"
+          [results]="single"
+          [gradient]="gradient"
+          (select)="onSelect($event)">
+        </ngx-charts-advanced-pie-chart>
+
+      </div>
 
     </gridster-item>
 

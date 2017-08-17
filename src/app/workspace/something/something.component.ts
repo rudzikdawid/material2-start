@@ -7,45 +7,139 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SomethingComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     console.log('SomethingComponent ngOnInit');
   }
 
+
+  single: any[] = [
+    {
+      "name": "Germany",
+      "value": 8940000
+    },
+    {
+      "name": "USA",
+      "value": 5000000
+    },
+    {
+      "name": "France",
+      "value": 7200000
+    }
+  ];
+  multi: any[] = [
+    {
+      "name": "Germany",
+      "series": [
+        {
+          "name": "2010",
+          "value": 7300000
+        },
+        {
+          "name": "2011",
+          "value": 8940000
+        }
+      ]
+    },
+
+    {
+      "name": "USA",
+      "series": [
+        {
+          "name": "2010",
+          "value": 7870000
+        },
+        {
+          "name": "2011",
+          "value": 8270000
+        }
+      ]
+    },
+
+    {
+      "name": "France",
+      "series": [
+        {
+          "name": "2010",
+          "value": 5000002
+        },
+        {
+          "name": "2011",
+          "value": 5800000
+        }
+      ]
+    }
+  ];
+
+  view: any[] = [700, 400];
+
+  // options
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = true;
+  showXAxisLabel = true;
+  xAxisLabel = 'Country';
+  showYAxisLabel = true;
+  yAxisLabel = 'Population';
+
+  colorScheme = {
+    domain: [
+      '#a8385d', '#7aa3e5', '#a27ea8', '#aae3f5', '#adcded', '#a95963', '#8796c0', '#7ed3ed', '#50abcc', '#ad6886'
+    ]
+  };
+
+
   widgets: Array<any> = [
     {
       x: 0, y: 0,
-      w: 1, h: 2,
-      dragAndDrop: true,
-      resizable: true,
-      title: 'Basic form inputs 1'
-    },
-    {
-      x: 1, y: 0, w: 3, h: 1,
-      dragAndDrop: true,
-      resizable: true,
-      title: 'Basic form inputs 2'
-    },
-    {
-      x: 1, y: 1, w: 2, h: 1,
+      w: 2, h: 1,
       dragAndDrop: true,
       resizable: true,
       title: 'Basic form inputs 3'
     },
     {
-      x: 3, y: 1, w: 1, h: 2,
+      x: 3, y: 0,
+      w: 2, h: 1,
       dragAndDrop: true,
       resizable: true,
       title: 'Basic form inputs 4'
     },
     {
-      w: 1, h: 2,
+      x: 5, y: 0,
+      w: 2, h: 1,
+      dragAndDrop: true,
+      resizable: true,
+      title: 'Basic form inputs x'
+    },
+    {
+      x: 0, y: 1,
+      w: 2, h: 1,
+      dragAndDrop: true,
+      resizable: true,
+      title: 'Basic form inputs 3'
+    },
+    {
+      x: 3, y: 1,
+      w: 2, h: 1,
+      dragAndDrop: true,
+      resizable: true,
+      title: 'Basic form inputs 4'
+    },
+    {
+      x: 5, y: 1,
+      w: 2, h: 1,
       dragAndDrop: true,
       resizable: true,
       title: 'Basic form inputs x'
     }
   ];
+
+
+  onSelect(event) {
+    console.log(event);
+  }
 
   gridsterOptions = {
     lanes: 2, // how many lines (grid cells) dashboard has
@@ -78,7 +172,7 @@ export class SomethingComponent implements OnInit {
         breakpoint: 'xl',
         minWidth: 1800,
         direction: 'vertical',
-        lanes: 8,
+        lanes: 6,
         resizable: true
       }
     ]
