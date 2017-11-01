@@ -1,44 +1,44 @@
 <div fxLayout="column" fxFlexFill>
 
-  <md-sidenav-container fxFlexFill>
-    <md-sidenav #left_sidenav align="start">
-      <md-list>
-        <md-list-item *ngFor="let nav of navigations" routerLink="{{nav.link}}" (click)="left_sidenav.close()" routerLinkActive="active" class="nav-item">
-          <md-icon md-list-icon>{{nav.icon}}</md-icon>
-          <h4 md-line>{{nav.name}}</h4>
-        </md-list-item>
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #left_sidenav align="start">
+      <mat-list>
+        <mat-list-item *ngFor="let nav of navigations" routerLink="{{nav.link}}" (click)="left_sidenav.close()" routerLinkActive="active" class="nav-item">
+          <mat-icon mat-list-icon>{{nav.icon}}</mat-icon>
+          <h4 mat-line>{{nav.name}}</h4>
+        </mat-list-item>
 
-        <md-list-item class="nav-item" routerLink="/login">
-          <md-icon md-list-icon>power</md-icon>
-          <h4 md-line>Logout</h4>
-        </md-list-item>
-      </md-list>
+        <mat-list-item class="nav-item" routerLink="/login">
+          <mat-icon mat-list-icon>power</mat-icon>
+          <h4 mat-line>Logout</h4>
+        </mat-list-item>
+      </mat-list>
 
-    </md-sidenav>
+    </mat-sidenav>
 
     <div fxLayout="column" fxLayout.sm="column" fxFlex>
-      <md-toolbar color="primary">
-        <button md-button (click)="left_sidenav.toggle()">
-          <md-icon>menu</md-icon>
+      <mat-toolbar color="primary">
+        <button mat-button (click)="left_sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
         </button>
 
         <span fxHide.xs>Angular Material</span>
 
         <span fxFlex></span>
 
-        <button md-button (click)="right_sidenav.toggle()">
-          <md-icon>settings</md-icon>
+        <button mat-button (click)="right_sidenav.toggle()">
+          <mat-icon>settings</mat-icon>
         </button>
 
-      </md-toolbar>
+      </mat-toolbar>
       <router-outlet></router-outlet>
     </div>
 
-    <md-sidenav #right_sidenav align="end">
+    <mat-sidenav #right_sidenav align="end">
         <app-theme-picker></app-theme-picker>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda consequuntur cum debitis deleniti eaque et illo ipsam iste labore modi, pariatur porro qui, repellendus sunt vel veritatis! Rerum, sed!</p>
-    </md-sidenav>
+    </mat-sidenav>
 
-  </md-sidenav-container>
+  </mat-sidenav-container>
 
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MdIconRegistry, MdDialog} from '@angular/material';
+import {MatIconRegistry, MatDialog} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Router} from '@angular/router';
 import {DialogComponent} from '../../../dialog/dialog.component';
@@ -11,9 +11,9 @@ import {PatientsService} from '../patients.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  constructor(iconRegistry: MdIconRegistry,
+  constructor(iconRegistry: MatIconRegistry,
               sanitizer: DomSanitizer,
-              private dialog: MdDialog,
+              private dialog: MatDialog,
               private router: Router,
               private patientsService: PatientsService) {
     // To avoid XSS attacks, the URL needs to be trusted from inside of your application.

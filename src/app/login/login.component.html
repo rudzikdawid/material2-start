@@ -1,26 +1,26 @@
 <div fxFlexFill fxLayout="column" class="theme-bg">
   <div fxFlex fxLayoutAlign.gt-sm="center center">
 
-    <md-card fxFlex="30" fxFlex.lt-md="100">
+    <mat-card fxFlex="30" fxFlex.lt-md="100">
       <h3>Just Log In!</h3>
       <form #form="ngForm" (ngSubmit)="onSubmit(form.value)" ngNativeValidate>
         <div fxLayout="column" fxLayoutGap="8px">
 
-          <md-input-container>
-            <input mdInput [(ngModel)]="user.login" #name="ngModel" name="login" placeholder="Login" required autofocus>
-          </md-input-container>
+          <mat-form-field>
+            <input matInput [(ngModel)]="user.login" #name="ngModel" name="login" placeholder="Login" required autofocus>
+          </mat-form-field>
 
-          <md-input-container>
-            <input mdInput [(ngModel)]="user.password" #name="ngModel" name="password" type="password" placeholder="Password" required>
-          </md-input-container>
+          <mat-form-field>
+            <input matInput [(ngModel)]="user.password" #name="ngModel" name="password" type="password" placeholder="Password" required>
+          </mat-form-field>
         </div>
 
         <div>
           <span fxFlex></span>
-          <button md-raised-button type="submit" color="accent">Next</button>
+          <button mat-raised-button type="submit" color="accent">Next</button>
         </div>
       </form>
-    </md-card>
+    </mat-card>
 
   </div>
   <app-theme-picker></app-theme-picker>

@@ -5,11 +5,12 @@ import {FormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {
-  MdCardModule,
-  MdButtonModule,
-  MdSelectModule,
-  MdOptionModule,
-  MdInputModule,
+  MatCardModule,
+  MatButtonModule,
+  MatSelectModule,
+  MatOptionModule,
+  MatInputModule,
+  MatFormFieldModule,
 } from '@angular/material';
 
 import {PersonalizedModule} from '../personalized/personalized.module';
@@ -25,11 +26,12 @@ const loginRoutes: Routes = [
 
 @NgModule({
   imports: [
-    MdCardModule,
-    MdButtonModule,
-    MdSelectModule,
-    MdOptionModule,
-    MdInputModule,
+    MatCardModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatInputModule,
+    MatFormFieldModule,
     FormsModule,
     FlexLayoutModule,
     PersonalizedModule,

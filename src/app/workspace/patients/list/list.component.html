@@ -1,16 +1,16 @@
 <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="16px">
 
-  <md-card>
-    <md-nav-list>
-      <md-list-item *ngFor="let user of users" (click)="onSelect(user)">
-        <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
+  <mat-card>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let user of users" (click)="onSelect(user)">
+        <mat-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></mat-icon>
         <span>{{user.name}}</span>
-      </md-list-item>
-    </md-nav-list>
-  </md-card>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-card>
 
 </div>
 
-<button md-fab (click)="openAdminDialog()" class="fab-bottom-right">
-  <md-icon>add</md-icon>
+<button mat-fab (click)="openAdminDialog()" class="fab-bottom-right">
+  <mat-icon>add</mat-icon>
 </button>

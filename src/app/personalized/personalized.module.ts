@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {
-  MdSelectModule,
-  MdOptionModule,
+  MatSelectModule,
+  MatOptionModule,
 } from '@angular/material';
 import {ThemePickerComponent} from './theme-picker/theme-picker.component';
 
@@ -12,8 +12,8 @@ import {ThemePickerComponent} from './theme-picker/theme-picker.component';
   imports: [
     CommonModule,
     FormsModule,
-    MdSelectModule,
-    MdOptionModule
+    MatSelectModule,
+    MatOptionModule
   ],
   exports: [ThemePickerComponent],
   providers: [],

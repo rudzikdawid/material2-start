@@ -3,20 +3,21 @@ import {CommonModule} from '@angular/common';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
 import {
-  MdMenuModule,
-  MdDialogModule,
-  MdListModule,
-  MdCardModule,
-  MdToolbarModule,
-  MdSidenavModule,
-  MdButtonModule,
-  MdIconModule,
-  MdSelectModule,
-  MdOptionModule,
-  MdInputModule,
-  MdSlideToggleModule,
-  MdCheckboxModule,
-  MdTabsModule
+  MatMenuModule,
+  MatDialogModule,
+  MatListModule,
+  MatCardModule,
+  MatToolbarModule,
+  MatSidenavModule,
+  MatButtonModule,
+  MatIconModule,
+  MatSelectModule,
+  MatOptionModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatSlideToggleModule,
+  MatCheckboxModule,
+  MatTabsModule
 } from '@angular/material';
 
 @NgModule({
@@ -26,20 +27,21 @@ import {
   exports: [
     FormsModule,
     FlexLayoutModule,
-    MdMenuModule,
-    MdDialogModule,
-    MdListModule,
-    MdCardModule,
-    MdToolbarModule,
-    MdSidenavModule,
-    MdButtonModule,
-    MdIconModule,
-    MdSelectModule,
-    MdOptionModule,
-    MdInputModule,
-    MdSlideToggleModule,
-    MdCheckboxModule,
-    MdTabsModule
+    MatMenuModule,
+    MatDialogModule,
+    MatListModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSlideToggleModule,
+    MatCheckboxModule,
+    MatTabsModule
   ],
   declarations: []
 })
