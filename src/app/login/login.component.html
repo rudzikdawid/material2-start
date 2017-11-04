@@ -1,16 +1,15 @@
 <div fxFlexFill fxLayout="column" class="theme-bg">
   <div fxFlex fxLayoutAlign.gt-sm="center center">
-
     <mat-card fxFlex="30" fxFlex.lt-md="100">
       <h3>Just Log In!</h3>
       <form #form="ngForm" (ngSubmit)="onSubmit(form.value)" ngNativeValidate>
         <div fxLayout="column" fxLayoutGap="8px">
 
-          <mat-form-field>
+          <mat-form-field class="w100p">
             <input matInput [(ngModel)]="user.login" #name="ngModel" name="login" placeholder="Login" required autofocus>
           </mat-form-field>
 
-          <mat-form-field>
+          <mat-form-field class="w100p">
             <input matInput [(ngModel)]="user.password" #name="ngModel" name="password" type="password" placeholder="Password" required>
           </mat-form-field>
         </div>
@@ -21,9 +20,7 @@
         </div>
       </form>
     </mat-card>
-
   </div>
-  <app-theme-picker></app-theme-picker>
 
-
+  <app-theme-picker class="mat-app-foreground"></app-theme-picker>
 </div>

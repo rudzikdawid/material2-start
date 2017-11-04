@@ -4,12 +4,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "serve:aot": "ng serve -prod --sourcemaps --aot",
+    "start": "npm run build-themes && ng serve",
+    "serve:aot": "npm run build-themes && ng serve -prod --sourcemaps --aot",
     "build": "ng build",
     "build:aot": "ng build -prod --sourcemaps --aot",
     "lint": "ng lint",
     "workshop": "ts-node ./workshop-cli",
+    "build-themes": "bash ./tools/build-themes.sh",
     "http-server": "npm run build:aot && cd ./dist && angular-http-server"
   },
   "private": true,
@@ -45,6 +46,7 @@
     "simple-terminal-menu": "^1.1.3",
     "ts-node": "~3.0.4",
     "tslint": "^5.3.2",
+    "node-sass": "^4.6.0",
     "typescript": "^2.4.0"
   }
 }

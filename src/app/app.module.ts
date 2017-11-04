@@ -3,6 +3,8 @@ import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {PersonalizedService} from './personalized/personalized.service';
+import {StyleManager} from './personalized/style-manager/style-manager';
+import {ThemeStorage} from './personalized/theme-picker/theme-storage/theme-storage'
 import {AppComponent} from './app.component';
 import 'hammerjs';
 import {RouterModule, Routes} from '@angular/router';
@@ -24,7 +26,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule, FlexLayoutModule],
-  providers: [PersonalizedService],
+  providers: [PersonalizedService, StyleManager, ThemeStorage],
   entryComponents: [],
   bootstrap: [AppComponent]
 })

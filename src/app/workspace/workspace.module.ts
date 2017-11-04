@@ -3,6 +3,7 @@ import {RouterModule, Routes } from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpModule} from '@angular/http';
+import {FormsModule} from '@angular/forms';
 import {
   MatListModule,
   MatCardModule,
@@ -58,6 +59,9 @@ const workspaceRoutes: Routes = [
     MatCheckboxModule,
     MatTabsModule,
     PersonalizedModule,
+    FormsModule,
+    MatSelectModule,
+    MatOptionModule,
     RouterModule.forChild(workspaceRoutes),
   ],
   exports: [

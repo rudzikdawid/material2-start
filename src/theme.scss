@@ -1,37 +1,71 @@
-@import '~@angular/material/_theming.scss';
+@import '../node_modules/@angular/material/theming';
+
+@import './styles/svg-theme';
+
+/*@import './app/pages/component-category-list/component-category-list-theme';
+@import './app/pages/component-list/component-list-theme';
+@import './app/pages/component-sidenav/component-sidenav-theme';
+@import './app/pages/component-viewer/component-viewer-theme';
+@import './app/pages/guide-list/guide-list-theme';
+@import './app/pages/homepage/homepage-theme';
+@import './app/shared/example-viewer/example-viewer-theme';
+@import './app/shared/footer/footer-theme';
+@import './app/shared/navbar/navbar-theme';
+@import './app/shared/table-of-contents/table-of-contents-theme';
+@import './styles/api-theme';
+@import './styles/markdown-theme';
+@import './styles/tables-theme';*/
+
 @include mat-core();
 
-$light-primary: mat-palette($mat-blue);
-$light-accent: mat-palette($mat-red);
-$light-theme: mat-light-theme($light-primary, $light-accent);
 
-$dark-primary: mat-palette($mat-light-blue);
-$dark-accent: mat-palette($mat-green);
-$dark-blue: mat-dark-theme($dark-primary, $dark-accent);
+// Styles for the docs app that are based on the current theme.
+@mixin material2-start-app-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
 
-@include angular-material-theme($dark-blue);
-
-.dark-blue {
-  @include angular-material-theme($dark-blue);
-
-  .theme-bg {
-    background-color: map_get($mat-dark-theme-background, background);
+  .mat-app-background {
+    background: mat-color($background, background);
   }
-}
 
-.light-blue {
-  @include angular-material-theme($light-theme);
-
-  .theme-bg {
-    background-color: map_get($mat-light-theme-background, background);
+  .mat-app-foreground {
+    color: map-get($foreground, base)
   }
-}
 
-.nav-item {
-  cursor: pointer;
-  padding: 8px;
-  outline-color: transparent;
-  &.active {
-    color: map_get($dark-primary, 500) !important;
+  .docs-primary-header {
+    background: mat-color($primary);
+
+    h1 {
+      color: mat-color($primary, default-contrast);
+    }
+
+    .nav-item {
+      cursor: pointer;
+      padding: 8px;
+      outline-color: transparent;
+      &.active {
+        color: map_get($theme, 500) !important;
+      }
+    }
   }
+
+  @include docs-site-svg-theme($theme);
+
+
+  /*  @include component-category-list-theme($theme);
+    @include component-list-theme($theme);
+    @include component-viewer-sidenav-theme($theme);
+    @include component-viewer-theme($theme);
+    @include docs-site-api-theme($theme);
+    @include docs-site-markdown-theme($theme);
+    @include docs-site-tables-theme($theme);
+    @include example-viewer-theme($theme);
+    @include footer-theme($theme);
+    @include guide-list-theme($theme);
+    @include home-page-theme($theme);
+    @include nav-bar-theme($theme);
+    @include table-of-contents-theme($theme);*/
 }
