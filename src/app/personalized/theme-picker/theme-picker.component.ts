@@ -21,23 +21,23 @@ export class ThemePickerComponent implements OnInit {
     const currentTheme = this._themeStorage.getStoredTheme();
     if (currentTheme) {
       this.installTheme(currentTheme);
+    } else {
+      this.installTheme(this.themes[0]);
     }
   }
 
-  themess = ['dark-blue', 'light-blue'];
   themes = [
+    {
+      primary: '#3F51B5',
+      accent: '#E91E63',
+      href: 'indigo-pink.css',
+      isDark: false
+    },
     {
       primary: '#673AB7',
       accent: '#FFC107',
       href: 'deeppurple-amber.css',
       isDark: false,
-    },
-    {
-      primary: '#3F51B5',
-      accent: '#E91E63',
-      href: 'indigo-pink.css',
-      isDark: false,
-      isDefault: true,
     },
     {
       primary: '#E91E63',
@@ -67,12 +67,7 @@ export class ThemePickerComponent implements OnInit {
 
   installTheme(theme: DocsSiteTheme) {
     this.currentTheme = this._getCurrentThemeFromHref(theme.href);
-
-    if (theme.isDefault) {
-      this.styleManager.removeStyle('theme');
-    } else {
-      this.styleManager.setStyle('theme', `assets/${theme.href}`);
-    }
+    this.styleManager.setStyle('theme', `assets/${theme.href}`);
 
     if (this.currentTheme) {
       this._themeStorage.storeTheme(this.currentTheme);

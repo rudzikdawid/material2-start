@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {PersonalizedService} from './personalized/personalized.service';
@@ -26,7 +26,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule, FlexLayoutModule],
-  providers: [PersonalizedService, StyleManager, ThemeStorage],
+  providers: [PersonalizedService, StyleManager, ThemeStorage, { provide: LOCALE_ID, useValue: 'ru' }],
   entryComponents: [],
   bootstrap: [AppComponent]
 })
