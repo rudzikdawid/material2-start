@@ -3,9 +3,15 @@
   <mat-sidenav-container fxFlexFill>
     <mat-sidenav #left_sidenav align="start">
       <mat-list>
-        <mat-list-item *ngFor="let nav of navigations" routerLink="{{nav.link}}" (click)="left_sidenav.close()" routerLinkActive="active" class="nav-item">
-          <mat-icon mat-list-icon>{{nav.icon}}</mat-icon>
-          <h4 mat-line>{{nav.name}}</h4>
+        <mat-list-item *ngFor="let nav of navigations"
+                       routerLink="{{nav.link}}"
+                       (click)="left_sidenav.close()"
+                       routerLinkActive="active"
+                       [routerLinkActiveOptions]="{exact: true}"
+                       class="nav-item">
+          <mat-icon mat-list-icon routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">{{nav.icon}}</mat-icon>
+          <h4 mat-line >{{nav.name}}</h4>
         </mat-list-item>
 
         <mat-list-item class="nav-item" routerLink="/login">

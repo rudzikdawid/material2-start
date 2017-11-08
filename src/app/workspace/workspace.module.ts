@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes } from '@angular/router';
+import {RouterModule, Routes, RouterLinkActive } from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
@@ -65,7 +65,7 @@ const workspaceRoutes: Routes = [
     RouterModule.forChild(workspaceRoutes),
   ],
   exports: [
-    RouterModule
+    RouterModule, RouterLinkActive
   ],
   providers: [],
   declarations: [
