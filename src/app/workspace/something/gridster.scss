@@ -1,0 +1,25 @@
+@import '../../../../node_modules/@angular/material/theming';
+
+@mixin gridster-item($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .gridster-item-inner {
+    padding: 10px;
+    background: mat-color($background, card);
+    position: absolute;
+    bottom: 10px;
+    top:10px;
+    left: 10px;
+    right: 10px;
+    overflow: hidden;
+
+    -webkit-transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    -o-transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  }
+}

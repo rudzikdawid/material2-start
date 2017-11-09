@@ -2,6 +2,8 @@
 
 @import './styles/svg-theme';
 @import './app/workspace/sidenav-theme';
+@import './app/workspace/something/gridster';
+
 
 /*@import './app/pages/component-category-list/component-category-list-theme';
 @import './app/pages/component-list/component-list-theme';
@@ -37,6 +39,7 @@
 
   @include docs-site-svg-theme($theme);
   @include sidenav-theme($theme);
+  @include gridster-item($theme);
 
   /*  @include component-category-list-theme($theme);
     @include component-list-theme($theme);
