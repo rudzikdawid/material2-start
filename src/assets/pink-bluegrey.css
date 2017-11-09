@@ -1457,18 +1457,6 @@ input.mat-input-element {
 .mat-app-foreground {
   color: white; }
 
-.nav-item {
-  cursor: pointer;
-  padding: 8px;
-  outline-color: transparent; }
-  .nav-item.active {
-    color: #e91e63; }
-
-.docs-primary-header {
-  background: #e91e63; }
-  .docs-primary-header h1 {
-    color: white; }
-
 .docs-svg-primary-fill {
   fill: #e91e63; }
 
@@ -1558,6 +1546,12 @@ input.mat-input-element {
 
 .docs-svg-primary-light-85-stop-color {
   stop-color: #fcdde8; }
+
+mat-nav-list a.nav-item {
+  outline-color: transparent; }
+  mat-nav-list a.nav-item.active {
+    color: #e91e63;
+    font-weight: 700; }
 
 .docs-component-viewer-sidenav h3 {
   background: rgba(255, 255, 255, 0.32);

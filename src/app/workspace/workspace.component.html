@@ -2,23 +2,27 @@
 
   <mat-sidenav-container fxFlexFill>
     <mat-sidenav #left_sidenav align="start">
-      <mat-list>
-        <mat-list-item *ngFor="let nav of navigations"
-                       routerLink="{{nav.link}}"
-                       (click)="left_sidenav.close()"
-                       routerLinkActive="active"
-                       [routerLinkActiveOptions]="{exact: true}"
-                       class="nav-item">
-          <mat-icon mat-list-icon routerLinkActive="active"
-                    [routerLinkActiveOptions]="{exact: true}">{{nav.icon}}</mat-icon>
-          <h4 mat-line >{{nav.name}}</h4>
-        </mat-list-item>
 
-        <mat-list-item class="nav-item" routerLink="/login">
+      <mat-nav-list>
+
+        <a class="nav-item"
+           *ngFor="let nav of navigations"
+           mat-list-item
+           routerLink="{{nav.link}}"
+           routerLinkActive="active">
+          <mat-icon mat-list-icon routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">
+            {{nav.icon}}
+          </mat-icon>
+          <h4 mat-line >{{nav.name}}</h4>
+        </a>
+        <a mat-list-item
+           routerLink="/login">
           <mat-icon mat-list-icon>power</mat-icon>
           <h4 mat-line>Logout</h4>
-        </mat-list-item>
-      </mat-list>
+        </a>
+
+      </mat-nav-list>
 
     </mat-sidenav>
 

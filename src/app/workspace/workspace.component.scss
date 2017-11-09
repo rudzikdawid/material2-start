@@ -7,14 +7,6 @@ mat-sidenav {
   width: 320px;
 }
 
-.mat-sidenav-end {
-  padding: 16px;
-  app-theme-picker {
-    padding-top: 16px;
-  }
-}
-
-.nav-item {
-  cursor: pointer;
-  padding: 8px;
+.mat-nav-list {
+  padding: 0;
 }
