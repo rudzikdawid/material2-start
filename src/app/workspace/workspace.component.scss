@@ -7,6 +7,12 @@ mat-sidenav {
   width: 320px;
 }
 
+mat-toolbar {
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
+
 .mat-nav-list {
   padding: 0;
 }

@@ -142,6 +142,8 @@ export class SomethingComponent implements OnInit {
   }
 
   gridsterOptions = {
+    useCSSTransforms: true,
+    floating: false,
     lanes: 2, // how many lines (grid cells) dashboard has
     direction: 'horizontal', // items floating direction: vertical/horizontal
     dragAndDrop: true, // possible to change items position by drag n drop
