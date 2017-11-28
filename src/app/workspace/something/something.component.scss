@@ -42,7 +42,7 @@ h1 {
 }
 
 .panel-body {
-  overflow: auto;
+  overflow: hidden;
   padding: 0 10px 10px;
   position: absolute;
   top: 37px;
@@ -66,6 +66,9 @@ h1 {
 }
 
 .gridster-item-prototype.is-over .gridster-item-inner {
-
   visibility: visible;
+}
+
+.ignore-events {
+  pointer-events: none;
 }

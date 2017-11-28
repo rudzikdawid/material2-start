@@ -1,12 +1,14 @@
-<div fxLayout="column" fxFlexFill style="padding: 16px 16px 16px 0;">
+<div fxLayout="column" fxFlexFill style="padding: 0 16px 16px 0;">
 
   <gridster [options]="gridsterOptions"
-            [draggableOptions]="{ handlerClass: 'panel-heading' }"
+            [draggableOptions]="{ handlerClass: 'panel-heading', scroll: false }"
             #gridster1
             fxFlex
             style="max-width:100%; max-height: 100%;">
 
     <gridster-item *ngFor="let widget of widgets"
+                   (start)="itemChanged(true)"
+                   (end)="itemChanged(false)"
                    [(x)]="widget.x"
                    [(y)]="widget.y"
                    [(w)]="widget.w"
@@ -17,20 +19,14 @@
       </div>
 
 
-      <div class="body" style="display: flex; min-height: 100%">
+      <div class="panel-body">
 
-        <p>
-          <!--Position: {{gridster1?.item?.x}} x {{gridster1?.item?.y}}<br>-->
-          <!--Size: {{widget.w}} x {{widget.h}}-->
-          <!--{{gridster1 | json}}-->
-        </p>
-
-        <ngx-charts-advanced-pie-chart
-          [scheme]="colorScheme"
-          [results]="single"
-          [gradient]="gradient"
-          (select)="onSelect($event)">
-        </ngx-charts-advanced-pie-chart>
+        <iframe [ngClass]="{'ignore-events': ignoreEvents }"
+                [src]="widget.src"
+                width="560"
+                height="315"
+                frameborder="0">
+        </iframe>
 
       </div>
 

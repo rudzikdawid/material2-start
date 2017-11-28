@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { SomethingComponent} from './something.component';
 import { GridsterModule } from 'angular2gridster';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 
 const somethingRoutes: Routes = [
@@ -15,7 +14,6 @@ const somethingRoutes: Routes = [
   imports: [
     RouterModule.forChild(somethingRoutes),
     GridsterModule,
-    NgxChartsModule,
     CommonModule,
     FlexLayoutModule
   ],
