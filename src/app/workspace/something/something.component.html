@@ -6,16 +6,47 @@
             fxFlex
             style="max-width:100%; max-height: 100%;">
 
-    <gridster-item *ngFor="let widget of widgets"
+    <gridster-item *ngFor="let widget of charts; let indx = index" #widgetRef
                    (start)="itemChanged(true)"
                    (end)="itemChanged(false)"
-                   [(x)]="widget.x"
-                   [(y)]="widget.y"
-                   [(w)]="widget.w"
-                   [(h)]="widget.h">
+                   [(x)]="widget.x" [(y)]="widget.y"
+                   [(xSm)]="widget.xSm" [(ySm)]="widget.ySm"
+                   [(xMd)]="widget.xMd" [(yMd)]="widget.yMd"
+                   [(xLg)]="widget.xLg" [(yLg)]="widget.yLg"
+                   [(xXl)]="widget.xXl" [(yXl)]="widget.yXl"
+                   [(w)]="widget.w" [(h)]="widget.h">
 
       <div class="panel-heading">
-        <h5 class="panel-title">{{ widget.title }}</h5>
+        <h5 class="panel-title">{{ widget.title }} position: {{widgetRef?.item?.x}} x {{widgetRef?.item?.y}}</h5>
+      </div>
+
+      <div class="panel-body">
+
+        <x-chartist
+          class="col-md-6"
+          [data]="widget.chart.data"
+          [type]="widget.chart.type"
+          [options]="widget.chart.options"
+          [responsiveOptions]="widget.chart.responsiveOptions"
+          [events]="widget.chart.events">
+        </x-chartist>
+
+      </div>
+
+    </gridster-item>
+
+    <gridster-item *ngFor="let widget of streams" #widgetRef
+                   (start)="itemChanged(true)"
+                   (end)="itemChanged(false)"
+                   [(x)]="widget.x" [(y)]="widget.y"
+                   [(xSm)]="widget.xSm" [(ySm)]="widget.ySm"
+                   [(xMd)]="widget.xMd" [(yMd)]="widget.yMd"
+                   [(xLg)]="widget.xLg" [(yLg)]="widget.yLg"
+                   [(xXl)]="widget.xXl" [(yXl)]="widget.yXl"
+                   [(w)]="widget.w" [(h)]="widget.h">
+
+      <div class="panel-heading">
+        <h5 class="panel-title">{{ widget.title }} position: {{widgetRef?.item?.x}} x {{widgetRef?.item?.y}}</h5>
       </div>
 
 
