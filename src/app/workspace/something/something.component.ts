@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import {GridsterItemComponent } from 'angular2gridster';
 import * as data from './data.json';
@@ -8,107 +8,17 @@ import * as data from './data.json';
   templateUrl: './something.component.html',
   styleUrls: ['./something.component.scss']
 })
-export class SomethingComponent implements AfterViewInit {
-
+export class SomethingComponent implements OnInit {
+  widgets$;
   constructor(private sanitizer: DomSanitizer) {}
 
   @ViewChildren('widgetRef') widgets: QueryList<GridsterItemComponent>;
 
-  ngAfterViewInit() {
-    console.log('SomethingComponent ngAfterViewInit');
+  ngOnInit() {
+    console.log('SomethingComponent ngOnInit');
+    this.widgets$ = this.loadWidgets();
   }
 
-  ignoreEvents = false;
-
-  charts: Array<any> = [
-    {
-      x: 2, y: 0,
-      xLg: 2, yLg: 0,
-      w: 2, h: 1,
-      dragAndDrop: true,
-      resizable: true,
-      title: 'Bar',
-      chart: {
-        type: 'Bar',
-        data: data['Bar']
-      }
-    },
-    {
-      x: 0, y: 0,
-      xLg: 0, yLg: 0,
-      w: 2, h: 1,
-      dragAndDrop: true,
-      resizable: true,
-      title: 'Pie',
-      chart: {
-        type: 'Pie',
-        data: data['Pie']
-      }
-    },
-    {
-      x: 4, y: 0,
-      xLg: 4, yLg: 0,
-      w: 2, h: 1,
-      dragAndDrop: true,
-      resizable: true,
-      title: 'Line',
-      chart: {
-        type: 'Line',
-        data: data['Line']
-      }
-    }
-  ];
-
-  streams: Array<any> = [
-    {
-      x: 2, y: 1,
-      xLg: 2, yLg: 1,
-      w: 2, h: 1,
-      dragAndDrop: true,
-      resizable: true,
-      title: 'ISS middle',
-      src: this.youtubeSrc('RtU_mdL2vBM')
-    },
-    {
-      x: 4, y: 1,
-      xLg: 4, yLg: 1,
-      w: 2, h: 1,
-      dragAndDrop: true,
-      resizable: true,
-      title: 'ISIS right',
-      src: this.youtubeSrc('ddFvjfvPnqk')
-    },
-    {
-      x: 0, y: 1,
-      xLg: 0, yLg: 1,
-      w: 2, h: 1,
-      dragAndDrop: true,
-      resizable: true,
-      title: 'ISS left',
-      src: this.youtubeSrc('-NFGAF3HgkM')
-    },
-    /*{
-      x: 0, y: 1,
-      w: 2, h: 1,
-      dragAndDrop: true,
-      resizable: true,
-      title: 'Donair',
-      src: this.youtubeSrc('AfhkvQFjwUg')
-    }*/
-  ];
-
-  private youtubeSrc(ytId) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${ytId}?rel=0&amp;controls=0&amp;showinfo=0`)
-  }
-
-  onSelect(event) {
-    console.log(event);
-  }
-
-  itemChanged = function(ignoreEventsFlag) {
-    this.ignoreEvents = ignoreEventsFlag;
-    window.dispatchEvent(new Event('resize'));
-  };
 
   gridsterOptions = {
     lanes: 2, // how many lines (grid cells) dashboard has
@@ -153,5 +63,105 @@ export class SomethingComponent implements AfterViewInit {
   };
 
 
+  loadWidgets() {
+    return {
+      charts: window.localStorage['widgets-charts'] && JSON.parse(window.localStorage['widgets-charts']) || [
+        {
+          x: 2, y: 0,
+          xLg: 2, yLg: 0,
+          w: 2, h: 1,
+          dragAndDrop: true,
+          resizable: true,
+          title: 'Bar',
+          chart: {
+            type: 'Bar',
+            data: data['Bar']
+          }
+        },
+        {
+          x: 0, y: 0,
+          xLg: 0, yLg: 0,
+          w: 2, h: 1,
+          dragAndDrop: true,
+          resizable: true,
+          title: 'Pie',
+          chart: {
+            type: 'Pie',
+            data: data['Pie']
+          }
+        },
+        {
+          x: 4, y: 0,
+          xLg: 4, yLg: 0,
+          w: 2, h: 1,
+          dragAndDrop: true,
+          resizable: true,
+          title: 'Line',
+          chart: {
+            type: 'Line',
+            data: data['Line']
+          }
+        }
+      ],
+      streams: (window.localStorage['widgets-streams'] && JSON.parse(window.localStorage['widgets-streams']) || [
+        {
+          x: 2, y: 1,
+          xLg: 2, yLg: 1,
+          w: 2, h: 1,
+          dragAndDrop: true,
+          resizable: true,
+          title: 'ISS middle',
+          ytID: 'RtU_mdL2vBM'
+        },
+        {
+          x: 4, y: 1,
+          xLg: 4, yLg: 1,
+          w: 2, h: 1,
+          dragAndDrop: true,
+          resizable: true,
+          title: 'ISIS right',
+          ytID: 'ddFvjfvPnqk'
+        },
+        {
+          x: 0, y: 1,
+          xLg: 0, yLg: 1,
+          w: 2, h: 1,
+          dragAndDrop: true,
+          resizable: true,
+          title: 'ISS left',
+          ytID: '-NFGAF3HgkM'
+        },
+        /*{
+          x: 0, y: 1,
+          w: 2, h: 1,
+          dragAndDrop: true,
+          resizable: true,
+          title: 'Donair',
+          src: this.youtubeSrc('AfhkvQFjwUg')
+        }*/
+      ]).map(widget => {
+        widget.src = this.youtubeSrc(widget.ytID);
+        return widget;
+      }),
+    }
+  }
+
+  saveWidgets() {
+    window.localStorage['widgets-charts'] = JSON.stringify(this.widgets$.charts);
+    window.localStorage['widgets-streams'] = JSON.stringify(this.widgets$.streams);
+  }
+
+  itemChanged = function(ignoreEventsFlag) {
+    this.ignoreEvents = ignoreEventsFlag;
+    window.dispatchEvent(new Event('resize'));
+
+    if (!ignoreEventsFlag) {
+      this.saveWidgets();
+    }
+  };
+
+  private youtubeSrc(ytId) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${ytId}?rel=0&amp;controls=0&amp;showinfo=0`)
+  }
 
 }

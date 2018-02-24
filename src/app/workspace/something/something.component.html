@@ -6,7 +6,7 @@
             fxFlex
             style="max-width:100%; max-height: 100%;">
 
-    <gridster-item *ngFor="let widget of charts; let indx = index" #widgetRef
+    <gridster-item *ngFor="let widget of widgets$.charts" #widgetRef
                    (start)="itemChanged(true)"
                    (end)="itemChanged(false)"
                    [(x)]="widget.x" [(y)]="widget.y"
@@ -35,7 +35,7 @@
 
     </gridster-item>
 
-    <gridster-item *ngFor="let widget of streams" #widgetRef
+    <gridster-item *ngFor="let widget of widgets$.streams" #widgetRef
                    (start)="itemChanged(true)"
                    (end)="itemChanged(false)"
                    [(x)]="widget.x" [(y)]="widget.y"
