@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {MatIconRegistry, MatDialog} from '@angular/material';
+import {MatDialog} from '@angular/material/dialog';
+import {MatIconRegistry} from '@angular/material/icon';
+
 import {DomSanitizer} from '@angular/platform-browser';
 import {Router} from '@angular/router';
 import {DialogComponent} from '../../../dialog/dialog.component';
 import {PatientsService} from '../patients.service';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-list',
@@ -36,7 +39,9 @@ export class ListComponent implements OnInit {
 
   openAdminDialog() {
     this.dialog.open(DialogComponent).afterClosed()
-      .filter(result => !!result)
+      .pipe(
+        filter(result => !!result)
+      )
       .subscribe(user => {
         this.users.push(user);
       });

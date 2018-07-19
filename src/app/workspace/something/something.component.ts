@@ -1,6 +1,6 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import {GridsterItemComponent } from 'angular2gridster';
+import {GridsterComponent } from 'angular2gridster';
 import * as data from './data.json';
 
 @Component({
@@ -12,7 +12,7 @@ export class SomethingComponent implements OnInit {
   widgets$;
   constructor(private sanitizer: DomSanitizer) {}
 
-  @ViewChildren('widgetRef') widgets: QueryList<GridsterItemComponent>;
+  @ViewChildren('widgetRef') widgets: QueryList<GridsterComponent>;
 
   ngOnInit() {
     console.log('SomethingComponent ngOnInit');
@@ -26,17 +26,16 @@ export class SomethingComponent implements OnInit {
       visible: true,
       color: 'grey'
     },
-    direction: 'horizontal', // items floating direction: vertical/horizontal
+    direction: 'vertical', // items floating direction: vertical/horizontal
     dragAndDrop: true, // possible to change items position by drag n drop
     resizable: true, // possible to resize items by drag n drop by item edge/corner
     responsiveView: true, // turn on adopting items sizes on window resize and enable responsiveOptions
     responsiveDebounce: 500, // window resize debounce time
-    widthHeightRatio: 0.9,
     responsiveOptions: [
-/*      {
+      {
         breakpoint: 'sm',
         direction: 'vertical',
-        lanes: 1
+        lanes: 2
       },
       {
         breakpoint: 'md',
@@ -44,7 +43,7 @@ export class SomethingComponent implements OnInit {
         direction: 'vertical',
         lanes: 4,
         resizable: true
-      },*/
+      },
       {
         breakpoint: 'lg',
         minWidth: 1250,
@@ -52,13 +51,13 @@ export class SomethingComponent implements OnInit {
         lanes: 6,
         resizable: true
       },
-     /* {
+      {
         breakpoint: 'xl',
         minWidth: 1800,
         direction: 'vertical',
         lanes: 6,
         resizable: true
-      }*/
+      }
     ]
   };
 
@@ -67,9 +66,13 @@ export class SomethingComponent implements OnInit {
     return {
       charts: window.localStorage['widgets-charts'] && JSON.parse(window.localStorage['widgets-charts']) || [
         {
-          x: 2, y: 0,
+          x: 0, y: 0,
+          xSm: 2, ySm: 0,
+          xMd: 2, yMd: 0,
           xLg: 2, yLg: 0,
+          xXl: 2, yXl: 0,
           w: 2, h: 1,
+          wLg: 2, hLg: 1,
           dragAndDrop: true,
           resizable: true,
           title: 'Bar',
@@ -79,9 +82,13 @@ export class SomethingComponent implements OnInit {
           }
         },
         {
-          x: 0, y: 0,
+          x: 0, y: 1,
+          xSm: 0, ySm: 0,
+          xMd: 0, yMd: 0,
           xLg: 0, yLg: 0,
+          xXl: 0, yXl: 0,
           w: 2, h: 1,
+          wLg: 2, hLg: 1,
           dragAndDrop: true,
           resizable: true,
           title: 'Pie',
@@ -91,9 +98,13 @@ export class SomethingComponent implements OnInit {
           }
         },
         {
-          x: 4, y: 0,
+          x: 0, y: 2,
+          xSm: 4, ySm: 0,
+          xMd: 4, yMd: 0,
           xLg: 4, yLg: 0,
+          xXl: 4, yXl: 0,
           w: 2, h: 1,
+          wLg: 2, hLg: 1,
           dragAndDrop: true,
           resizable: true,
           title: 'Line',
@@ -105,27 +116,39 @@ export class SomethingComponent implements OnInit {
       ],
       streams: (window.localStorage['widgets-streams'] && JSON.parse(window.localStorage['widgets-streams']) || [
         {
-          x: 2, y: 1,
+          x: 0, y: 3,
+          xSm: 2, ySm: 1,
+          xMd: 2, yMd: 1,
           xLg: 2, yLg: 1,
+          xXl: 2, yXl: 1,
           w: 2, h: 1,
+          wLg: 2, hLg: 1,
           dragAndDrop: true,
           resizable: true,
           title: 'ISS middle',
           ytID: 'RtU_mdL2vBM'
         },
         {
-          x: 4, y: 1,
+          x: 0, y: 4,
+          xSm: 4, ySm: 1,
+          xMd: 4, yMd: 1,
           xLg: 4, yLg: 1,
+          xXl: 4, yXl: 1,
           w: 2, h: 1,
+          wLg: 2, hLg: 1,
           dragAndDrop: true,
           resizable: true,
           title: 'ISIS right',
           ytID: 'ddFvjfvPnqk'
         },
         {
-          x: 0, y: 1,
+          x: 0, y: 5,
+          xSm: 0, ySm: 1,
+          xMd: 0, yMd: 1,
           xLg: 0, yLg: 1,
+          xXl: 0, yXl: 1,
           w: 2, h: 1,
+          wLg: 2, hLg: 1,
           dragAndDrop: true,
           resizable: true,
           title: 'ISS left',

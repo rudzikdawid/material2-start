@@ -8,9 +8,7 @@ import {
   MatListModule,
   MatCardModule,
   MatToolbarModule,
-  MatSidenavModule,
   MatButtonModule,
-  MatIconModule,
   MatSelectModule,
   MatOptionModule,
   MatInputModule,
@@ -20,6 +18,8 @@ import {
   MatTabsModule,
   MatGridListModule
 } from '@angular/material';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   imports: [

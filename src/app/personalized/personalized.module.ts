@@ -2,12 +2,14 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {
-  MatButtonModule, MatGridListModule, MatIconModule,
+  MatButtonModule,
+  MatGridListModule,
   MatSelectModule,
   MatOptionModule,
   MatMenuModule,
   MatTooltipModule
 } from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
 
 import {StyleManager} from './style-manager/style-manager';
 import {ThemeStorage, DocsSiteTheme} from './theme-picker/theme-storage/theme-storage';

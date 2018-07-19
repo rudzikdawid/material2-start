@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Subject, BehaviorSubject} from 'rxjs/Rx';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class PatientsService {

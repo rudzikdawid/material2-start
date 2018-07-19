@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {LOCALE_ID, NgModule} from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {PersonalizedService} from './personalized/personalized.service';
@@ -8,6 +9,7 @@ import {ThemeStorage} from './personalized/theme-picker/theme-storage/theme-stor
 import {AppComponent} from './app.component';
 import 'hammerjs';
 import {RouterModule, Routes} from '@angular/router';
+
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -20,12 +22,16 @@ const appRoutes: Routes = [
     AppComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  exports: [RouterModule, FlexLayoutModule],
+  exports: [
+    RouterModule,
+    FlexLayoutModule,
+  ],
   providers: [PersonalizedService, StyleManager, ThemeStorage, { provide: LOCALE_ID, useValue: 'ru' }],
   entryComponents: [],
   bootstrap: [AppComponent]

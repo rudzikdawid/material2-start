@@ -28,18 +28,6 @@ export class ThemePickerComponent implements OnInit {
 
   themes = [
     {
-      primary: '#3F51B5',
-      accent: '#E91E63',
-      href: 'indigo-pink.css',
-      isDark: false
-    },
-    {
-      primary: '#673AB7',
-      accent: '#FFC107',
-      href: 'deeppurple-amber.css',
-      isDark: false,
-    },
-    {
       primary: '#E91E63',
       accent: '#607D8B',
       href: 'pink-bluegrey.css',
@@ -51,6 +39,18 @@ export class ThemePickerComponent implements OnInit {
       href: 'purple-green.css',
       isDark: true,
     },
+    {
+      primary: '#3F51B5',
+      accent: '#E91E63',
+      href: 'indigo-pink.css',
+      isDark: false
+    },
+    {
+      primary: '#673AB7',
+      accent: '#FFC107',
+      href: 'deeppurple-amber.css',
+      isDark: false,
+    }
   ];
   selectedTheme: string;
 

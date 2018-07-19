@@ -5,6 +5,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SomethingComponent} from './something.component';
 import { GridsterModule } from 'angular2gridster';
 import { ChartistModule } from 'ng-chartist';
+import { MatIconModule } from '@angular/material/icon'
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 const somethingRoutes: Routes = [
@@ -14,10 +16,12 @@ const somethingRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(somethingRoutes),
-    GridsterModule,
+    GridsterModule.forRoot(),
     ChartistModule,
     CommonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatIconModule,
+    MatTooltipModule
   ],
   declarations: [SomethingComponent]
 })

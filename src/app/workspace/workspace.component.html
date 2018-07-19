@@ -1,7 +1,7 @@
 <div fxLayout="column" fxFlexFill>
 
   <mat-sidenav-container fxFlexFill>
-    <mat-sidenav #left_sidenav align="start">
+    <mat-sidenav #left_sidenav position="start">
 
       <mat-nav-list>
 
@@ -9,7 +9,8 @@
            *ngFor="let nav of navigations"
            mat-list-item
            routerLink="{{nav.link}}"
-           routerLinkActive="active">
+           routerLinkActive="active"
+           (click)="left_sidenav.close()">
           <mat-icon mat-list-icon routerLinkActive="active"
                     [routerLinkActiveOptions]="{exact: true}">
             {{nav.icon}}
@@ -46,7 +47,7 @@
       <router-outlet></router-outlet>
     </div>
 
-    <mat-sidenav #right_sidenav align="end">
+    <mat-sidenav #right_sidenav position="end">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda consequuntur cum debitis deleniti eaque et illo ipsam iste labore modi, pariatur porro qui, repellendus sunt vel veritatis! Rerum, sed!</p>
     </mat-sidenav>
 

@@ -10,7 +10,6 @@ import {
   MatToolbarModule,
   MatSidenavModule,
   MatButtonModule,
-  MatIconModule,
   MatSelectModule,
   MatOptionModule,
   MatInputModule,
@@ -19,6 +18,8 @@ import {
   MatCheckboxModule,
   MatTabsModule
 } from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
+
 import {PersonalizedModule} from '../personalized/personalized.module';
 import {WorkspaceComponent} from './workspace.component';
 
